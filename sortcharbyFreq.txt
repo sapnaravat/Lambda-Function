@@ -1,0 +1,14 @@
+
+class Solution {
+public:
+    string frequencySort(string s) {
+        int tmp[256]={0};
+        for(char c:s)
+            tmp[c]++;
+       
+        sort(s.begin(),s.end(),[=](char a,char b){if(tmp[a]==tmp[b]) return a<b;
+            else return tmp[a]>tmp[b];});
+        
+    return s;
+    }
+};
